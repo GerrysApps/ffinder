@@ -1,0 +1,113 @@
+import 'dart:collection';
+import 'dart:convert';
+import 'dart:io';
+import 'package:path/path.dart';
+import 'package:ffinder/filemanager.dart';
+import 'package:ffinder/filespec.dart';
+import 'package:ffinder/tabdefinition.dart';
+
+class Cache {
+  final FileManager _filemanager = FileManager();
+
+  List<FileSpec> movies = [];
+  List<FileSpec> tv = [];
+
+  final HashMap<String, List<FileSpec>> _cache = HashMap<String, List<FileSpec>>(); // tabname -> List of FileSpec
+
+  static Cache? _instance;
+
+  static Cache get() { 
+    _instance ??= Cache._private();
+    return _instance as Cache;
+  }
+
+  Cache._private() { 
+    _instance = this;
+  }
+
+  //______________________________________________________________________________
+  Future<List<FileSpec>> getAllHash(TabDefinition td, int index) async {
+    if (_cache.containsKey(td.name)) {
+      // found in memory
+      return Future.value(_cache[td.name]);
+    }
+
+    if (!_cache.containsKey(td.name)) {
+      // it is not in memory, see if it is on disk
+      if (_readJson(td.name, index)) {
+        return Future.value(_cache[td.name]);
+      }
+    }
+
+    // get the data of disk and then store in a json file
+    Future<List<FileSpec>> list = _filemanager.readHardDrives(td);
+
+    try {
+      List<FileSpec> fileSpecs = await list;
+      _cache[td.name] = fileSpecs;
+      _save2disk(td.name, fileSpecs);
+
+    } 
+    catch (e) {
+      print('getAll(${td.name}) exception $e');
+    }
+
+    return _cache[td.name] as List<FileSpec>;
+  }
+
+  //______________________________________________________________________________
+  void clear(TabDefinition tab, int index) {
+      File('${tab.name}.json').deleteSync();
+      _cache.remove(tab.name);
+  }
+
+  //______________________________________________________________________________
+  void _save2disk(String tabname, List<FileSpec> files) {
+    try {
+      var jsonString = json.encode(files);
+      File('$tabname.json').writeAsStringSync(jsonString);
+    } 
+    catch (e) {
+      print(e);
+    }
+  }
+
+  //______________________________________________________________________________
+  bool cached(String name, int index) { 
+    return _cache.containsKey(name);
+  }
+
+  //______________________________________________________________________________
+  bool _readJson(String tabname, int index) {
+    try {
+      String path = join(Directory.current.path, '$tabname.json');
+      File file = File(path);
+      if (!file.existsSync())
+        return false;
+
+      List<dynamic> data  = json.decode(file.readAsStringSync());
+
+      List<FileSpec> specs = [];
+      for (var map in data) {
+        try {
+          var f = map['filename'];
+          var p = map['path'];
+          var d = map['datetime'];
+          var s = map['size'];
+          var fs = FileSpec.s(filename: f, path: p, date: d, size: s);
+          specs.add(fs);
+        } 
+        catch(e) { 
+          print('argh $e');
+        }
+      }
+
+      _cache[tabname] = specs;
+      return true;
+    } 
+    catch (e) {
+      print(e);
+      return false;
+    }
+  }
+}

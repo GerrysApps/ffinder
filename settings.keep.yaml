@@ -1,0 +1,85 @@
+author: 'Gerry Haustein'
+tabs: 
+  Movies: 
+    suffixes: 
+      - 'mp4'
+      - 'mkv'
+      - 'avi'
+    locations: 
+      - 'c:/Movies'
+      - 'f:/Movies'
+      - 'g:/Movies'
+
+  TV Shows: 
+    suffixes: 
+      - 'mp4'
+      - 'mkv'
+      - 'avi'
+    locations: 
+      - 'c:/TV'
+      - 'f:/TV'
+      - 'g:/TV'
+
+  Music: 
+    suffixes: 
+      - 'mp3'
+    locations: 
+      - 'c:/music'
+
+  Gerry's Docs: 
+    suffixes: 
+      - 'pdf'
+      - 'doc'
+      - 'docx'
+      - 'txt'
+      - 'xlsx'
+      - 'csv'
+    locations: 
+      - 'c:/users/everybody/documents'
+
+  One Drive: 
+    suffixes: 
+      - 'pdf'
+      - 'doc'
+      - 'docx'
+      - 'xlsx'
+      - 'txt'
+    locations: 
+      - 'c:/Users/Everybody/OneDrive'
+
+ignore: 
+  - '.git'
+  - 'node_modules'
+  - 'node_modules'
+  - 'Audacity'
+  - 'CircleDock'
+  - 'demo'
+  - 'Eclipse'
+  - 'EmailMe'
+  - 'ffinder.motherfucker'
+  - 'FromGpsOwl'
+  - 'Futter'
+  - 'futter'
+  - 'Github'
+  - 'Gmdh Shell'
+  - 'GPSOwl'
+  - 'gps.foreground.service'
+  - 'android'
+  - 'GPSOwl.Android'
+  - 'PinkCal.app'
+  - 'Library'
+  - 'MetaTrader4.Copy'
+  - 'Microsoft.WindowsSoundRecorder'
+  - 'My Games'
+  - 'Neovim'
+  - 'PasswordSafe.old'
+  - 'Pazzword Manager'
+  - 'Personal Video Database'
+  - 'Questrade IQ Edge'
+  - 'statistics'
+  - 'tmp'
+  - 'Tor Browser'
+  - 'TorBrowser'
+  - 'vim'
+  - 'Visual Studio'
+  - 'WindowsPowerShell'

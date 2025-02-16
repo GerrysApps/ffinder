@@ -1,0 +1,35 @@
+author: 'Gerry H'
+date: true
+size: false
+tabs: 
+  Movies: 
+    suffixes: 
+      - 'mp4'
+      - 'mkv'
+      - 'avi'
+    locations: 
+      - 'c:/Movies'
+      - 'f:/Movies'
+
+  Dart: 
+    suffixes: 
+      - 'dart'
+      - 'json'
+    locations: 
+      - 'C:/Gerry/ffinder'
+
+ignore: 
+  - 'build'
+  - 'demo'
+  - 'examples'
+  - 'flutter_sdk'
+  - 'license'
+  - 'node_modules'
+  - 'plugins'
+  - '_resources'
+  - 'resources'
+  - 'tmp'
+  - 'vim90'
+  - 'Android Studio'
+  - 'My Games'
+  - 'WinMerge'

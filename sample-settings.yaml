@@ -1,0 +1,57 @@
+author: 'Gerry'
+date: true,
+size: false,
+tabs: 
+  Movies: 
+    suffixes: 
+      - 'mp4'
+      - 'mkv'
+      - 'avi'
+    locations: 
+      - 'c:/Movies'
+      - 'f:/Movies'
+      - 'g:/Movies'
+
+  TV Shows: 
+    suffixes: 
+      - 'mp4'
+      - 'mkv'
+      - 'avi'
+    locations: 
+      - 'c:/TV'
+      - 'f:/TV'
+      - 'g:/TV'
+
+  Music: 
+    suffixes: 
+      - 'mp3'
+      - 'flac'
+    locations: 
+      - 'c:/music'
+
+  Docs: 
+    suffixes: 
+      - 'pdf'
+      - 'doc'
+      - 'docx'
+      - 'txt'
+      - 'xlsx'
+      - 'csv'
+    locations: 
+      - 'c:/users/my_account/documents'
+
+  One Drive: 
+    suffixes: 
+      - 'pdf'
+      - 'doc'
+      - 'docx'
+      - 'xlsx'
+      - 'csv'
+      - 'txt'
+    locations: 
+      - 'c:/Users/Everybody/OneDrive'
+
+ignore: 
+  - 'tmp'
+  - 'demo'
+  - 'My Games'
