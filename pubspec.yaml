@@ -44,27 +44,6 @@ dependencies:
   yaml: ^3.1.1
   yaml_writer: ^1.0.3
 
-# old dependencies
-#dependencies:
-#  flutter:
-#    sdk: flutter
-#  path: ^1.8.2
-#  path_provider: ^2.0.13
-#  file_picker: ^5.2.5
-#  path_provider_windows: ^2.1.4
-#  synchronized: ^3.0.1
-#  rflutter_alert: ^3.0.4
-# old dependencies
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-#  cupertino_icons: ^1.0.2
-#  yaml: ^3.1.1
-#  yaml_writer: 1.0.3
-#  intl: ^0.18.0
-  # countdown_flutter: ^0.1.2
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

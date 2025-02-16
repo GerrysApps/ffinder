@@ -1,11 +1,9 @@
-// import 'dart:html';
-// https://docs.flutter.dev/development/platform-integration/desktop
-
-// https://docs.flutter.dev/deployment/windows    release a desktop app
-
-// https://fonts.google.com/icons?icon.platform=ios
-
+// Copyright (c) 2023-2025 GerrysApps.com  
 // ignore_for_file: curly_braces_in_flow_control_structures, avoid_print
+
+// https://docs.flutter.dev/development/platform-integration/desktop
+// https://docs.flutter.dev/deployment/windows    release a desktop app
+// https://fonts.google.com/icons?icon.platform=ios
 
 /*
 MainStateApp: This class extends StatefulWidget, which means it represents a widget that has mutable state. 
@@ -96,11 +94,6 @@ class MainTabBar extends State<MainStateApp>
     rebuildMainTabs(0);
     SettingsYaml.get().setUpdateCallback(this);
 
-    // KEEP for the icons later
-    //tabs.add(maketab('Movies', Icons.movie_filter));
-    //tabs.add(maketab('TV Shows', Icons.tv_rounded));
-    //tabs.add(maketab('Music', Icons.queue_music));
-
     _tabController = TabController(length: maintabs.length, vsync: this, initialIndex: 0);
     _tabController.addListener(tabSelected);
   }
@@ -118,21 +111,6 @@ class MainTabBar extends State<MainStateApp>
     if (first > 0) _tabController.dispose();
       _tabController = TabController(length: maintabs.length, vsync: this, initialIndex: 0);
   }
-
-  //______________________________________________________________________________
-  /* KEEP for the icons later?
-  Tab _maketab(String text, IconData icon) {
-    return Tab(
-      child: Row(
-        children: [
-          Icon(icon),
-          const SizedBox(width: 8),
-          Text(text),
-        ],
-      ),
-    );
-  }
-  */
 
   //______________________________________________________________________________
   void tabSelected() {
@@ -200,7 +178,7 @@ class MainTabBar extends State<MainStateApp>
                 },
               ),
               IconButton(
-                tooltip: 'Version 1.4.1 by gerry@gerrysapps.com',
+                tooltip: 'Version 1.5.0 by gerry@gerrysapps.com',
                 icon: const Icon(Icons.mood, color: Colors.amber),
                 onPressed: () {},
               ),
@@ -303,70 +281,49 @@ class ListViewBuilderState extends State<FilesStateTab> {
 
   bool firstLoad = true;
   bool showBusy = false;
-  //bool showDate = true;
-  //bool showSize = false;
   bool showPath = true;
   bool showDate = SettingsYaml.get().date;
   bool showSize = SettingsYaml.get().size;
 
   //______________________________________________________________________________
   void openSettings() {
-// this does work    AlertMan().showMessage(context, 'No no...', 'Cannot delete all tabs, first create another tab').whenComplete(() => { });
     Navigator.push(context,
         MaterialPageRoute(builder: (context) => const SettingsScreen()));
   }
 
   //______________________________________________________________________________
-    /* old
   void restartFfinder() {
-    var alert = AlertMan();
-    alert
-        .showQuestion(context, 'Question for you...',
-            'Some changes require a program restart. Restart now?')
-        .whenComplete(() {
-              if (alert.result)
-                {
-                  Process.run('ffinder.exe', []),
-                  Timer(const Duration(milliseconds: 500), () {
-                    exit(0);
-                  })
-                }
-            });
-  }
-*/
-
-void restartFfinder() {
-  Alert(
-    context: context,
-    title: 'Question for you...',
-    desc: 'Some changes require a program restart. Restart now?',
-    buttons: [
-      DialogButton(
+    Alert(
+      context: context,
+      title: 'Question for you...',
+      desc: 'Some changes require a program restart. Restart now?',
+      buttons: [
+        DialogButton(
         onPressed: () => Navigator.pop(context, true),
-        width: 120,
-        child: const Text(
-          'Restart',
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          width: 120,
+          child: const Text(
+            'Restart',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
         ),
-      ),
-      DialogButton(
-        onPressed: () => Navigator.pop(context, false),
-        width: 120,
-        child: const Text(
-          'Cancel',
-          style: TextStyle(color: Colors.white, fontSize: 20),
+        DialogButton(
+          onPressed: () => Navigator.pop(context, false),
+          width: 120,
+          child: const Text(
+            'Cancel',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
         ),
-      ),
-    ],
-  ).show().then((result) {
-    if (result != null && result) {
-      Process.run('ffinder.exe', []);
-      Timer(const Duration(milliseconds: 100), () {
-        exit(0);
-      });
-    }
-  });
-}
+      ],
+    ).show().then((result) {
+      if (result != null && result) {
+        Process.run('ffinder.exe', []);
+        Timer(const Duration(milliseconds: 100), () {
+          exit(0);
+        });
+      }
+    });
+  }
 
   //______________________________________________________________________________
   // this gets called a lot
@@ -379,8 +336,6 @@ void restartFfinder() {
     _textEditingController.text = widget.searchString;
     if (firstLoad) {
       firstLoad = false;
-  //    showDate = SettingsYaml.get().date;
-   //   showSize = SettingsYaml.get().size;
       Timer(const Duration(milliseconds: 500), () {
         _findFiles('');
       });
@@ -430,13 +385,12 @@ void restartFfinder() {
   }
 
   //______________________________________________________________________________
-  // a tile is a widget for a file (or path)
+  // a tile is a widget for a file or path: as in, one line in the view of files
   ListTile getTile(BuildContext contet, int index) {
     FileSpec myfile = widget.seafiles[index];
     return ListTile(
       contentPadding: const EdgeInsets.fromLTRB(8, -5, -5, 8),
 
-      // leading: const Icon(Icons.movie), // TODO later
       title: Flex(
         // Row and Flex both work
         direction: Axis.horizontal,
@@ -526,21 +480,31 @@ void restartFfinder() {
 
   //______________________________________________________________________________
   void _properSort() {
-    widget.seafiles.sort((a, b) => a.path.compareTo(b.path));
-    widget.seafiles.sort((a, b) => _spec(a).compareTo(_spec(b)));
+    widget.seafiles.sort((a, b) => a.path.compareTo(b.path));     // path sort
+    widget.seafiles.sort((a, b) => _spec(a).compareTo(_spec(b))); // filename sort
   }
 
   //______________________________________________________________________________
-  _toggleDate() {
-    if (showDate)
-      _properSort(); // switching to no date, sort on name
-    else
+  void _dateSort() {
       widget.seafiles.sort((a, b) => b.datetime.compareTo(a.datetime));
+  }
 
+  //______________________________________________________________________________
+  void _sizeSort() {
+    widget.seafiles.sort((a, b) => b.sz > a.sz ? 1 : 0);
+  }
+
+  //______________________________________________________________________________
+  // switching show/hide date column
+  _toggleDate() {
     setState(() {
       showDate = !showDate;
       SettingsYaml.get().date = showDate;
       SettingsYaml.get().save(showDate);
+      if (showDate)
+        _dateSort();
+      else
+        _properSort(); // sort on name
     });
   }
 
@@ -558,16 +522,23 @@ void restartFfinder() {
   _findFiles(String value) async {
     widget.searchString = value;
     setState(() {
-      widget.setFiles([]); // reset the list - do I need to?
+      widget.setFiles([]); // reset the list (necessary?)
       showBusy = true;
       FocusScope.of(context).requestFocus(_focusNode);
     });
 
-    List<FileSpec> ffiles =
-        await _searchObject.searchForFilesAndFolders(value, widget.mytabdef);
+    List<FileSpec> ffiles = await _searchObject.searchForFilesAndFolders(value, widget.mytabdef);
 
     widget.setFiles(ffiles);
+
+    bool showDate = SettingsYaml.get().date;
+    bool showSize = SettingsYaml.get().size;
+
     _properSort();
+    if (showDate)
+      _dateSort();
+    // if (showSize)
+    //   _sizeSort();
 
     setState(() {
       showBusy = false;

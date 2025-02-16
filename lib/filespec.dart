@@ -1,9 +1,8 @@
+// Copyright (c) 2023-2025 GerrysApps.com  
+// ignore_for_file: curly_braces_in_flow_control_structures, avoid_print, prefer_initializing_formals
+
 import 'dart:core';
-// import 'dart:io';
 import 'package:intl/intl.dart';
-// import 'package:ffinder/settings.dart';
-// import 'package:path_provider/path_provider.dart';
-// import 'package:ffinder/tabdefinition.dart';
 
 class FileSpec {
   static DateFormat df = DateFormat('yyyy-MM-dd'); // HH:mm');
@@ -12,7 +11,7 @@ class FileSpec {
   String path = 'poop';
   String size = 'doop';
   String datetime = 'goop';
-  // late DateTime date;
+  int sz = 0;
 
   static String date2date(DateTime dt) { 
     return df.format(dt);
@@ -31,6 +30,7 @@ class FileSpec {
     this.path = path;
     // this.datetime = df.format(date);
     datetime = date;
+    sz = size;
 
     if (size < 1 || filename.isEmpty) {
       this.size = ' ';

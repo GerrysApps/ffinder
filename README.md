@@ -1,3 +1,4 @@
+Copyright (c) 2023-2025 GerrysApps.com  
 
 Must enable Developer mode (in Settings) for Windows to be able to use the path_provider (or some "plugin")
     Go to Settings (Win + I).

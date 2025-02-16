@@ -1,5 +1,6 @@
 // ignore_for_file: curly_braces_in_flow_control_structures
 
+// Copyright (c) 2023-2025 GerrysApps.com  
 import 'package:yaml/yaml.dart';
 
 class TabDefinition { 

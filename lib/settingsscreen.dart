@@ -3,7 +3,7 @@
 // https://blog.codemagic.io/flutter-widget-cheat-sheet/
 // layout only: https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e
 
-// import 'package:fluttertoast/fluttertoast.dart';
+// Copyright (c) 2023-2025 GerrysApps.com  
 import 'package:ffinder/alert.dart';
 import 'package:ffinder/tabdefinition.dart';
 import 'package:flutter/material.dart';

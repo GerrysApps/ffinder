@@ -1,32 +1,20 @@
 // ignore_for_file: avoid_print, curly_braces_in_flow_control_structures, unused_import
 
+// Copyright (c) 2023-2025 GerrysApps.com  
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
-//import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:ffinder/filemanager.dart';
 import 'package:ffinder/filespec.dart';
 import 'package:ffinder/tabdefinition.dart';
 import 'package:synchronized/synchronized.dart';
-//import 'package:ffinder/main.dart';
-//import 'package:ffinder/search.dart';
-
 
 class Cache {
   final FileManager _filemanager = FileManager();
 
-  //List<FileSpec> movies = [];
-  //List<FileSpec> tv = [];
-
-  // List<List<FileSpec>> fucker = <List<FileSpec>>[];
-
   final HashMap<String, List<FileSpec>> _cache = HashMap<String, List<FileSpec>>(); // tabname -> List of FileSpec
-
-//  Future<List<FileSpec>> find(String search, TabDefinition tabdef) async {
-//    return _search.find(search, tabdef);
-//  }
 
   static Cache? _instance;
 

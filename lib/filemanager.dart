@@ -1,12 +1,10 @@
 // ignore_for_file: curly_braces_in_flow_control_structures
 
+// Copyright (c) 2023-2025 GerrysApps.com  
 import 'dart:core';
 import 'dart:io';
-// import 'package:intl/intl.dart';
 import 'package:ffinder/settings.dart';
-//import 'package:path_provider/path_provider.dart';
 import 'package:ffinder/tabdefinition.dart';
-
 import 'filespec.dart';
 
 // TODO don't match text on just the suffix, unless just 3 letters are entered

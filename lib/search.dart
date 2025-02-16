@@ -1,3 +1,4 @@
+// Copyright (c) 2023-2025 GerrysApps.com  
 // ignore_for_file: curly_braces_in_flow_control_structures, avoid_print
 
 import 'dart:core';

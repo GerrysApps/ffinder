@@ -1,5 +1,6 @@
 // ignore_for_file: curly_braces_in_flow_control_structures, avoid_print, non_constant_identifier_names, prefer_final_fields
 
+// Copyright (c) 2023-2025 GerrysApps.com  
 import 'dart:io';
 import 'package:path/path.dart';
 import 'package:yaml/yaml.dart';

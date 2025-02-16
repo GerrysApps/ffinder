@@ -1,6 +1,6 @@
 author: 'Gerry H'
 date: true
-size: false
+size: true
 tabs: 
   Movies: 
     suffixes: 
@@ -8,8 +8,8 @@ tabs:
       - 'mkv'
       - 'avi'
     locations: 
-      - 'c:/Movies'
-      - 'f:/Movies'
+      - 'd:/Movies'
+      - 'l:/Movies'
 
   Dart: 
     suffixes: 
