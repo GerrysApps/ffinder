@@ -178,7 +178,7 @@ class MainTabBar extends State<MainStateApp>
                 },
               ),
               IconButton(
-                tooltip: 'Version 1.5.0 by gerry@gerrysapps.com',
+                tooltip: 'Version 1.5.0 by ffinder@gerrysapps.com',
                 icon: const Icon(Icons.mood, color: Colors.amber),
                 onPressed: () {},
               ),
@@ -490,9 +490,9 @@ class ListViewBuilderState extends State<FilesStateTab> {
   }
 
   //______________________________________________________________________________
-  void _sizeSort() {
-    widget.seafiles.sort((a, b) => b.sz > a.sz ? 1 : 0);
-  }
+  //void _sizeSort() {
+  //  widget.seafiles.sort((a, b) => b.sz > a.sz ? 1 : 0);
+  //}
 
   //______________________________________________________________________________
   // switching show/hide date column
@@ -532,7 +532,7 @@ class ListViewBuilderState extends State<FilesStateTab> {
     widget.setFiles(ffiles);
 
     bool showDate = SettingsYaml.get().date;
-    bool showSize = SettingsYaml.get().size;
+    //bool showSize = SettingsYaml.get().size;
 
     _properSort();
     if (showDate)

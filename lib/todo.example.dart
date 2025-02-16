@@ -49,13 +49,13 @@ class _TodosPageState extends State<TodosPage> {
     // to be filled in a later step
   }
  
-  Future<void> _initializeApp() async {
+  //Future<void> _initializeApp() async {
     // to be filled in a later step
-  }
+  //}
  
-  Future<void> _configureAmplify() async {
+  //Future<void> _configureAmplify() async {
     // to be filled in a later step
-  }
+  //}
  
   @override
   Widget build(BuildContext context) {
@@ -155,9 +155,8 @@ class TodoItem extends StatelessWidget {
             ),
             Icon(
                 // todo.isComplete
-                true
-                    ? Icons.check_box
-                    : Icons.check_box_outline_blank,
+                // true ? Icons.check_box : Icons.check_box_outline_blank,
+                Icons.check_box, 
                 size: iconSize),
           ]),
         ),

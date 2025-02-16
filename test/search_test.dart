@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ffinder/settings.dart';
-import 'package:ffinder/tabdefinition.dart';
+//import 'package:ffinder/settings.dart';
+//import 'package:ffinder/tabdefinition.dart';
 
 void main() {
   test('Test search function', () async {
@@ -111,9 +111,9 @@ for (int i = 0; i < 3; i++) {
       }
     }
 
-    SettingsYaml sc = SettingsYaml.get();
-    List<TabDefinition> tabDefs = SettingsYaml.get().tablist();
-    TabDefinition tb = tabDefs[0];
+//    SettingsYaml sc = SettingsYaml.get();
+//    List<TabDefinition> tabDefs = SettingsYaml.get().tablist();
+//    TabDefinition tb = tabDefs[0];
 
     /*
     List<FileSpec> files = await Search().find("hell go bye my ri", tb);

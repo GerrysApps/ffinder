@@ -1,6 +1,6 @@
 author: 'Gerry H'
 date: true
-size: true
+size: false
 tabs: 
   Movies: 
     suffixes: 

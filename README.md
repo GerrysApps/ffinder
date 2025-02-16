@@ -1,5 +1,7 @@
 Copyright (c) 2023-2025 GerrysApps.com  
 
+My first (and only) flutter project.
+
 Must enable Developer mode (in Settings) for Windows to be able to use the path_provider (or some "plugin")
     Go to Settings (Win + I).
     Search for "Developer settings".
@@ -7,9 +9,14 @@ Must enable Developer mode (in Settings) for Windows to be able to use the path_
 
 run 'flutter clean' lots 
 
+# if moving the project:
+Delete the build folder in your project directory
+flutter clean
+flutter create .
+flutter run
+
 flutter build windows --release
-files are here:
-C:\Users\gerry\Documents\BitBucket\ffinder\build\windows\x64\runner\Release
+files are here: .\ffinder\build\windows\x64\runner\Release
 
 [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 

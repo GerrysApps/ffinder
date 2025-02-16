@@ -57,7 +57,7 @@ class FileManager {
       return;
     }
     // if (_matchSearch(searches, folder)) { }
-print('finding in folder $folder');
+    // print('finding in folder $folder');
     var stats = directory.statSync();
     String dt = FileSpec.date2date(stats.modified);
     files.add(FileSpec(filename: '', path: folder, size: stats.size, date: dt));
