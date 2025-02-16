@@ -203,7 +203,7 @@ class MainTabBar extends State<MainStateApp>
                 },
               ),
               IconButton(
-                tooltip: 'Version 1.5.0 by ffinder@gerrysapps.com',
+                tooltip: 'Version 1.5.1 by ffinder@gerrysapps.com',
                 icon: const Icon(Icons.mood, color: Colors.amber),
                 onPressed: () {},
               ),
@@ -500,7 +500,8 @@ class ListViewBuilderState extends State<FilesStateTab> {
 
   //______________________________________________________________________________
   String _spec(FileSpec fs) {
-    return '${fs.path}.${fs.filename.toLowerCase()}';
+    // return '${fs.path}.${fs.filename}.toLowerCase()'; // do not sort by path, path doesn't matter
+    return '${fs.filename}.toLowerCase()}';
   }
 
   //______________________________________________________________________________
