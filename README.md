@@ -29,3 +29,6 @@ Delete the build folder in your project directory
 flutter clean
 flutter create .
 flutter run
+
+#### video file types
+mp4, mkv, m4v, avi, iso, m4a

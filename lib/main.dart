@@ -245,7 +245,7 @@ class MainTabBar extends State<MainStateApp>
 
   //______________________________________________________________________________
   Future<void> launchWeb() async {
-    ProcessResult result = await Process.run('cmd', ['/c', 'start', '', 'https://orangesoftware.net/ffinder']);
+    ProcessResult result = await Process.run('cmd', ['/c', 'start', '', 'https://gerrysapps.com/ffinder']);
     if (result.exitCode == 0) {
       // good
     } else {
