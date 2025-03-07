@@ -13,6 +13,7 @@ Must enable Developer mode (in Settings) for Windows to be able to use the path_
 
 run 'flutter clean' lots 
 
+flutter upgrade
 flutter build windows --release
 files are here: .\ffinder\build\windows\x64\runner\Release
 

@@ -203,13 +203,13 @@ class MainTabBar extends State<MainStateApp>
                 },
               ),
               IconButton(
-                tooltip: 'Version 1.5.1 by ffinder@gerrysapps.com',
+                tooltip: 'Version 1.5.2 by ffinder@gerrysapps.com',
                 icon: const Icon(Icons.mood, color: Colors.amber),
                 onPressed: () {},
               ),
               IconButton(
                 tooltip: 'Open home page in your browser',
-                icon: const Icon(Icons.help, color: Colors.white),
+                icon: const Icon(Icons.help, color: Colors.lightBlue),
                 onPressed: () {
                   launchWeb();
                 },
