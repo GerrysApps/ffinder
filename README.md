@@ -4,7 +4,9 @@ My first (and only) flutter project.
 
 Download at [Gerry's Apps](https://gerrysapps.com)
 
-### other notes for me follow
+### other notes for me below
+
+flutter not on path, use ..\..\FlutterSDK\flutter\bin\flutter
 
 Must enable Developer mode (in Settings) for Windows to be able to use the path_provider (or some "plugin")
     Go to Settings (Win + I).
